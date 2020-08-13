@@ -1,0 +1,33 @@
+<div class="d-flex flex-column justify-content-center pt-5 background">
+    <p class="text-center title-font">COVID19 BATCH TESTING SIMULATOR</p>
+    <div class="d-flex flex-row justify-content-center pt-5">
+        <button class="btn p-2 mr-5 disable" (click)="showBatchGroup()">SIMULATE BATCH</button>
+        <button class="btn p-2 ml-5 disable" (click)="runFullSimulation()">RUN FULL SIMULATION</button>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="d-flex flex-column pt-5 mt-5">
+            <p *ngIf="showMedRec">med rec #'s in batch</p>
+            <div class="d-flex flex-column" *ngFor="let person of currBatch">
+                <li>{{ person }}</li>
+            </div>
+            <div class="d-flex flex-column pt-5 mt-5">
+                <p>Total number of people: {{ numPeople }}</p>
+                <p>Total number of tests used: {{ totalTestsUsed }}</p>
+                <p>Total number of tests saved: {{ testsSaved }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="ml-5 pl-5 mt-5 text-primary font-weight-bold" (click)="toggleText()">How does the simulator work?</div>
+    <p *ngIf="showText" class="ml-5 pl-5 w-75">Testing for Covid-19 is extremely limited in the United States. Because of this, we can utilize batch testing to 
+        maximize the the medical resources we have. For example, with each sample taken, we can get up to two tests out of 
+        it and we can pool around up to 10 tests together to save testing in the case of samples that have low probability of 
+        testing positive for Covid-19.
+    </p>
+    <p *ngIf="showText" class="ml-5 pl-5 w-75"> 
+        click the SIMULATE BATCH button to show the medical record numbers of the patients we should batch together based on the lowest probability 
+        algorithm. Click on RUN FULL SIMULATION to run through the entire sample collection and view how many tests were saved with the lowest probability
+        batch testing algoritm used. 
+    </p>
+    <div class="end"></div>
+</div>
+
