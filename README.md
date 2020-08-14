@@ -12,3 +12,12 @@ Imagine a situation where you have a batch of 10 patients, and no one in the bat
 So, the app must look at the collection of samples from patients and determine which ones, if any, to batch.
  
 Think about whether you should ever use smaller batch sizes. Never use sizes larger than 10 since that will make the results less reliable (more false negatives). The ideal solution tells you how many tests you save when you batch a group of people with specific pretest probabilities of having Covid-19.
+
+
+TODO: Features to add 
+1. Change med record numbers
+2. Change areas to numbers
+3. Move data to seperate TS file
+4. Add weights to COVID score
+5. Add test simulator that randomly decides if batch is positive or negative
+6. Add more data/read in data from csv
